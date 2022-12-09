@@ -35,7 +35,7 @@ $config['base_url'] = 'http://10.0.0.207/Curso_PHP_Codeigniter_JQuery_Bootstrap/
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
