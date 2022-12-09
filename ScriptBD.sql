@@ -15,3 +15,9 @@ ALTER TABLE `usuarios` CHANGE `nome` `nomeUsuario` VARCHAR(50) CHARACTER SET utf
 ALTER TABLE `usuarios` CHANGE `chave` `senha` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 
 ALTER TABLE `pessoas` CHANGE `data_nasc` `data_nasc` DATE NOT NULL;
+
+ALTER TABLE `pessoas` ADD `sobrenome` VARCHAR(50) NOT NULL AFTER `nome`;
+
+UPDATE `pessoas` SET `sobrenome` = 'Matheus' WHERE `pessoas`.`idPessoa` = 1;
+
+UPDATE `pessoas` SET `sobrenome` = 'Rocha' WHERE `pessoas`.`idPessoa` = 2;
