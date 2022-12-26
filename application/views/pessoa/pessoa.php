@@ -18,6 +18,14 @@
                 <td><input type="text" name="nome"></td>
             </tr>
             <tr>
+                <td><label for="">Sobrenome</label></td>
+                <td><input type="text" name="sobrenome"></td>
+            </tr>
+            <tr>
+                <td><label for="">Apelido</label></td>
+                <td><input type="text" name="apelido"></td>
+            </tr>
+            <tr>
                 <td><label for="">Email</label></td>
                 <td><input type="email" name="email"></td>
             </tr>
@@ -45,6 +53,7 @@
             </tr>
         </table>
     </form>
+    <a href="<?= base_url('Login') ?>">Faça Login</a>
 </body>
 
 </html>
