@@ -21,3 +21,5 @@ ALTER TABLE `pessoas` ADD `sobrenome` VARCHAR(50) NOT NULL AFTER `nome`;
 UPDATE `pessoas` SET `sobrenome` = 'Matheus' WHERE `pessoas`.`idPessoa` = 1;
 
 UPDATE `pessoas` SET `sobrenome` = 'Rocha' WHERE `pessoas`.`idPessoa` = 2;
+
+ALTER TABLE `pessoas` ADD `apelido` VARCHAR(35) NULL AFTER `sobrenome`;
