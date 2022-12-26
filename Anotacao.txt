@@ -8,3 +8,6 @@ https://www.apachefriends.org/pt_br/download.html
 
 
 https://codeigniter.com/userguide3/general/urls.html
+
+
+Resoluça odo problema Metodo Encrypt https://stackoverflow.com/questions/40571694/call-to-undefined-method-ci-encryptsha1

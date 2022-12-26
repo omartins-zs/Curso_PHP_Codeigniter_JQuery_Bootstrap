@@ -40,13 +40,29 @@ class Pessoa extends CI_Controller
 	}
 	public function atualizar()
 	{
-		// Pessoa
+		// Pessoa/Usuario
 		$param['nome'] = $this->input->post('nome');
 		$param['sobrenome'] = $this->input->post('sobrenome');
 		$param['apelido'] = $this->input->post('apelido');
 		$param['email'] = $this->input->post('email');
 
 		$this->Pessoa_model->atualizarDados($param);
+
+		// //forma 1
+		$this->load->view('pessoa/pessoa');
+
+		//forma 2
+		redirect('pessoa');
+
+	}
+
+	public function delete()
+	{
+		// Pessoa/Usuario
+		$idP = $this->input->post('idPessoa');
+	
+		$this->Pessoa_model->deletarPessoa($idP);
+		$this->Usuario_model->deletarUsuario($idP);
 
 		redirect('pessoa');
 	}

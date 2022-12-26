@@ -23,3 +23,5 @@ UPDATE `pessoas` SET `sobrenome` = 'Matheus' WHERE `pessoas`.`idPessoa` = 1;
 UPDATE `pessoas` SET `sobrenome` = 'Rocha' WHERE `pessoas`.`idPessoa` = 2;
 
 ALTER TABLE `pessoas` ADD `apelido` VARCHAR(35) NULL AFTER `sobrenome`;
+
+ALTER TABLE `pessoas` ADD `situacao` INT NOT NULL COMMENT '1 - Ativo, 0 - Inativo' AFTER `data_nasc`;

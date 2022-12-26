@@ -19,7 +19,6 @@ class Pessoa_model extends CI_Model
         );
 
         $this->db->insert('pessoas', $campos);
-
         return $this->db->insert_id();
     }
 
@@ -32,9 +31,23 @@ class Pessoa_model extends CI_Model
             'email' =>    $param['email'],
         );
 
+        $this->db->where('idPessoa', $this->session->userdata('s_idPessoa'));
         $this->db->update('pessoas', $campos);
-        $this->db->where('idPessoa', $this->session->userdata('s_idPesoa'));
 
         return 1;
+    }
+
+    public function deletarPessoa($idP)
+    {
+        // Eliminar 1 Registro
+        $campos = array(
+            'idPessoa' => $idP
+        );
+
+        $this->db->delete('pessoas', $campos);
+
+        // Elimar 2 Registros
+        // $this->db->where('idPessoa',$idP);
+        // $this->db->delete('pessoas');
     }
 }

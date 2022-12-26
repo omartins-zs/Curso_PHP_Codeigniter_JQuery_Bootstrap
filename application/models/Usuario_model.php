@@ -6,7 +6,6 @@ class Usuario_model extends CI_Model
     {
         parent::__construct();
         $this->load->library('encryption');
-
     }
 
     public function insertUsuario($paramUsu)
@@ -19,6 +18,20 @@ class Usuario_model extends CI_Model
 
         $this->db->insert('usuarios', $campos);
 
-        return $this->db->insert_id();
+        // return $this->db->insert_id();
+    }
+
+    public function deletarUsuario($idP)
+    {
+        $this->db->where('idPessoa', $idP);
+        $this->db->delete('usuarios');
+        // $campos = array(
+        //     'idUsuario' => $idP
+        // );
+
+        // $this->db->where('idPessoa', $idP);
+        // $this->db->delete('usuarios', $campos);
+
+        // return 1;
     }
 }

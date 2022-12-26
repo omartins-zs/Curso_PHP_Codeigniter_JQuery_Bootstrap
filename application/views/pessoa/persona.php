@@ -18,6 +18,12 @@
         <input type="text" name="email" placeholder="Ex:jorge@email.com"></input><br><br>
         <input type="submit" value="Atualizar"></input><br>
     </form>
+
+    <form action="<?= base_url() ?>pessoa/delete" method="post">
+        <h1>Eliminar por id</h1>
+        <input type="text" name="idPessoa" placeholder="ID"></input><br><br>
+        <input type="submit" value="Deletar"></input><br>
+    </form>
 </body>
 
 </html>
