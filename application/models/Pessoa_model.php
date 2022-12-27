@@ -28,7 +28,7 @@ class Pessoa_model extends CI_Model
             'nome' =>    $param['nome'],
             'sobrenome' =>    $param['sobrenome'],
             'apelido' =>    $param['apelido'],
-            'email' =>    $param['email'],
+            'email' =>    $param['email']
         );
 
         $this->db->where('idPessoa', $this->session->userdata('s_idPessoa'));
@@ -49,5 +49,15 @@ class Pessoa_model extends CI_Model
         // Elimar 2 Registros
         // $this->db->where('idPessoa',$idP);
         // $this->db->delete('pessoas');
+    }
+    public function buscaPessoas()
+    {
+        $this->db->select('p.nome, p.sobrenome, p.apelido, p.documento, c.cidade');
+        $this->db->from('pessoas p');
+        $this->db->join('cidades c', 'c.idCidade = p.idCidade');
+
+        $r = $this->db->get();
+
+        return $r->result();
     }
 }
