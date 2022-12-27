@@ -41,12 +41,8 @@
                 <td><label for="">Cidade</label></td>
                 <td>
                     <div class="form-group">
-                        <select class="form-control">
-                            <option value="">option 1</option>
-                            <!-- <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option> -->
+                        <select id="selectCidades" class="form-control">
+                            <option value="">Selecione</option>
                         </select>
                     </div>
                 </td>
@@ -68,5 +64,38 @@
         </table>
     </form>
     <a href="<?= base_url('Login') ?>">Faça Login</a>
+    <br><br><br>
 
-    
+    <button type="button" id="btnGetPessoas" class="btn btn-flat"><i class="fa fa-search"></i>&nbsp; Buscar</button>
+    <div class="col-sm-5">
+
+        <div class="box box-primary">
+
+            <table id="tablePessoas" class="table table-bordered">
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Apelido</th>
+                    <th>Documento</th>
+                    <!-- <th>Email</th> -->
+                    <th>Cidade</th>
+                    <th style="width: 40px">Label</th>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>Update software</td>
+                    <td>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-red">55%</span></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var baseUrl = "<?= base_url(); ?>";
+    </script>
