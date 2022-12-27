@@ -50,6 +50,17 @@
 <script src="<?= base_url(); ?>assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url(); ?>assets/dist/js/demo.js"></script>
+
+<!-- Script personalizado do Projeto -->
+
+<?php if ($this->uri->segment(1) == 'pessoa') { ?>
+
+    <script src="<?= base_url(); ?>assets/js/pessoa.js"></script>
+
+    <!-- Usar pasta JS fora do ASSETS foi o exemplo do video Tutorial -->
+    <!--  <script src="<?= base_url(); ?>js/pessoa.js"></script> -->
+<?php } ?>
+
 </body>
 
 </html>
