@@ -14,7 +14,10 @@ class Pessoa extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('pessoa/pessoa');
+		$this->load->view('templates/header');
+		$this->load->view('templates/menu');
+		$this->load->view('pessoa/cadastrar_pessoa');
+		$this->load->view('templates/footer');
 	}
 
 	public function cadastrar()
@@ -49,21 +52,25 @@ class Pessoa extends CI_Controller
 		$this->Pessoa_model->atualizarDados($param);
 
 		// //forma 1
-		$this->load->view('pessoa/pessoa');
+		// $this->load->view('pessoa/pessoa');
 
 		//forma 2
 		redirect('pessoa');
-
 	}
 
 	public function delete()
 	{
 		// Pessoa/Usuario
 		$idP = $this->input->post('idPessoa');
-	
+
 		$this->Pessoa_model->deletarPessoa($idP);
 		$this->Usuario_model->deletarUsuario($idP);
 
 		redirect('pessoa');
+	}
+
+	public function getPessoas()
+	{
+		echo json_encode($this->Pessoa_model->buscaPessoas());
 	}
 }
