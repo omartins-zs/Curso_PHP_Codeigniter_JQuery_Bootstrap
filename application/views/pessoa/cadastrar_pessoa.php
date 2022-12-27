@@ -78,24 +78,13 @@
                     <th>Sobrenome</th>
                     <th>Apelido</th>
                     <th>Documento</th>
-                    <!-- <th>Email</th> -->
                     <th>Cidade</th>
-                    <th style="width: 40px">Label</th>
                 </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>Update software</td>
-                    <td>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
-                    </td>
-                    <td><span class="badge bg-red">55%</span></td>
-                </tr>
-
             </table>
         </div>
     </div>
+
+
     <script type="text/javascript">
         var baseUrl = "<?= base_url(); ?>";
     </script>
