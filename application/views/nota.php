@@ -1,17 +1,16 @@
-<div class="col-sm-5">
+<div class="col-sm-8">
 
 	<div class="box box-primary">
 
 		<table id="tableNotas" class="table table-bordered table-striped">
 			<tr>
-				<th style="width: 10px">#</th>
-				<th>N°</th>
-				<th>Aluno</th>
-				<th>1B</th>
-				<th>2B</th>
-				<th>3B</th>
-				<th>4B</th>
-				<th>Final</th>
+				<th style="width: 10%">#</th>
+				<th style="width: 50%">Aluno</th>
+				<th style="width: 10%">1B</th>
+				<th style="width: 10%">2B</th>
+				<th style="width: 10%">3B</th>
+				<th style="width: 10%">4B</th>
+				<th style="width: 10%">Final</th>
 			</tr>
 		</table>
 	</div>
