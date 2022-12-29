@@ -15,4 +15,19 @@ class Nota_model extends CI_Model
 		$r = $this->db->get();
 		return $r->result();
 	}
+
+
+	public function salvarNotas($param)
+	{
+		$campos = array(
+			'idPessoa' => $param['idPessoa'],
+			'1B' => $param['n1'],
+			'2B' => $param['n2'],
+			'3B' => $param['n3'],
+			'4B' => $param['n4'],
+			'notaFinal' => $param['nf'],
+		);
+
+		$this->db->insert('notas', $campos);
+	}
 }

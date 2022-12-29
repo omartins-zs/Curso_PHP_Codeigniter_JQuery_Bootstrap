@@ -22,4 +22,16 @@ class Nota extends CI_Controller
 	{
 		echo json_encode($this->Nota_model->buscarNotas());
 	}
+	public function saveNotas()
+	{
+		$param['idPessoa'] = $this->input->post('idPessoa');
+		$param['n1'] = $this->input->post('n1');
+		$param['n2'] = $this->input->post('n2');
+		$param['n3'] = $this->input->post('n3');
+		$param['n4'] = $this->input->post('n4');
+		$param['nf'] = $this->input->post('nf');
+
+		$this->Nota_model->salvarNotas($param);
+		// echo json_encode($this->Nota_model->buscarNotas());
+	}
 }
