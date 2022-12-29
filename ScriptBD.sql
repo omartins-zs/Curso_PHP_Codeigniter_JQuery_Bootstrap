@@ -25,3 +25,15 @@ UPDATE `pessoas` SET `sobrenome` = 'Rocha' WHERE `pessoas`.`idPessoa` = 2;
 ALTER TABLE `pessoas` ADD `apelido` VARCHAR(35) NULL AFTER `sobrenome`;
 
 ALTER TABLE `pessoas` ADD `situacao` INT NOT NULL COMMENT '1 - Ativo, 0 - Inativo' AFTER `data_nasc`;
+
+CREATE TABLE `curso_php_codeigniter_jquery_bootstrap`.`cidades` ( `idCidade` INT NULL AUTO_INCREMENT , `cidade` VARCHAR(30) NOT NULL , PRIMARY KEY (`idCidade`)) ENGINE = InnoDB;
+
+ALTER TABLE `pessoas` ADD `idCidade` INT NOT NULL AFTER `documento`;
+
+INSERT INTO `cidades` (`idCidade`, `cidade`) VALUES (NULL, 'Guarulhos'), (NULL, 'Campinas'), (NULL, 'Osasco'), (NULL, 'Sorocaba'), (NULL, 'Maua')
+
+ALTER TABLE `cidades` ADD `situacao` INT NOT NULL AFTER `cidade`;
+
+CREATE TABLE `curso_php_codeigniter_jquery_bootstrap`.`notas` ( `idNotas` INT NOT NULL AUTO_INCREMENT , `idPessoa` INT NOT NULL , `1B` INT NOT NULL , `2B` INT NOT NULL , `3B` INT NOT NULL , `4B` INT NOT NULL , `notaFinal` INT NOT NULL , PRIMARY KEY (`idNotas`)) ENGINE = InnoDB;
+
+ALTER TABLE `notas` ADD FOREIGN KEY (`idPessoa`) REFERENCES `pessoas`(`idPessoa`) ON DELETE RESTRICT ON UPDATE RESTRICT;
