@@ -3,11 +3,11 @@
 </div>
 <!-- /.content-wrapper -->
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Version</b> 2.3.3
-    </div>
-    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+	<div class="pull-right hidden-xs">
+		<b>Version</b> 2.3.3
+	</div>
+	<strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+	reserved.
 </footer>
 
 </div>
@@ -19,7 +19,7 @@
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-    $.widget.bridge('uibutton', $.ui.button);
+	$.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.6 -->
 <script src="<?= base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
@@ -55,10 +55,26 @@
 
 <?php if ($this->uri->segment(1) == 'pessoa') { ?>
 
-    <script src="<?= base_url(); ?>assets/js/pessoa.js"></script>
+	<script src="<?= base_url(); ?>assets/js/pessoa.js"></script>
 
-    <!-- Usar pasta JS fora do ASSETS foi o exemplo do video Tutorial -->
-    <!--  <script src="<?= base_url(); ?>js/pessoa.js"></script> -->
+	<!-- Usar pasta JS fora do ASSETS foi o exemplo do video Tutorial -->
+	<!--  <script src="<?= base_url(); ?>js/pessoa.js"></script> -->
+<?php } ?>
+
+<?php if ($this->uri->segment(1) == 'cidade') { ?>
+
+	<script src="<?= base_url(); ?>assets/js/cidade.js"></script>
+
+	<!-- Usar pasta JS fora do ASSETS foi o exemplo do video Tutorial -->
+	<!--  <script src="<?= base_url(); ?>js/pessoa.js"></script> -->
+<?php } ?>
+<?php if ($this->uri->segment(1) == 'nota') { ?>
+
+
+	<script src="<?= base_url(); ?>assets/js/nota.js"></script>
+
+	<!-- Usar pasta JS fora do ASSETS foi o exemplo do video Tutorial -->
+	<!--  <script src="<?= base_url(); ?>js/pessoa.js"></script> -->
 <?php } ?>
 
 </body>
