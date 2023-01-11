@@ -15,3 +15,13 @@ Resoluça odo problema Metodo Encrypt https://stackoverflow.com/questions/405716
 
 
 Template Baixado nessa Versao https://github.com/ColorlibHQ/AdminLTE/releases/tag/v2.3.3
+
+
+
+Tutorial codeigniter 10 - Envio de email con imagen linkeado
+
+
+
+RewriteEngine on
+RewriteCond $1 !^(index\.php|images|robots\.txt|assets|js|uploads)
+RewriteRule ^(.*) index.php/$1 [L]
