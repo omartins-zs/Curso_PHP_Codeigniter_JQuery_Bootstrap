@@ -32,7 +32,7 @@
                   </a>
                   <ul class="treeview-menu">
                       <li class="active"><a href="<?= base_url(); ?>pessoa"><i class="fa fa-circle-o"></i> Cadastrar Pessoa</a></li>
-                      <li><a href="<?= base_url(); ?>cidade"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                      <li><a href="<?= base_url(); ?>cidade"><i class="fa fa-circle-o"></i> Cidades</a></li>
                   </ul>
               </li>
               <li class="treeview">
@@ -43,14 +43,13 @@
                   </a>
                   <ul class="treeview-menu">
                       <li><a href="<?= base_url(); ?>nota"><i class="fa fa-circle-o"></i> Inserir notas</a></li>
-                      <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
                       <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
                       <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="pages/widgets.html">
-                      <i class="fa fa-th"></i> <span>Widgets</span>
+                  <a href="<?= base_url() ?>upload">
+                      <i class="fa fa-th"></i> <span>Subir Imagem</span>
                       <small class="label pull-right bg-green">new</small>
                   </a>
               </li>
