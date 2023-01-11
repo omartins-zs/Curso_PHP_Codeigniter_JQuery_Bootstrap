@@ -10,6 +10,14 @@ class Cidade extends CI_Controller
 		$this->load->model('Cidade_model');
 	}
 
+	// Deletar isto
+	public function index(){
+		$this->load->view('templates/header');
+		$this->load->view('templates/menu');
+		$this->load->view('cidade');
+		$this->load->view('templates/footer');
+	}
+
 	public function getCidades()
 	{
 		$s = $this->input->post('situacao');

@@ -19,6 +19,7 @@ class Login extends CI_Controller
 	public function ingressar()
 	{
 		$usuario = $this->input->post('nomeUsuario');
+		
 		// Não funcionou
 		// $senha = $this->encrypt->sha1($this->input->post('senha'));
 		$senha = sha1($this->input->post('senha'));
@@ -27,7 +28,11 @@ class Login extends CI_Controller
 
 		if ($logar == 1) {
 			// echo 'Voce esta logado';
+			$this->load->view('templates/header');
+			$this->load->view('templates/menu');
 			$this->load->view('pessoa/persona');
+			$this->load->view('templates/footer');
+			// $this->load->view('pessoa/pessoa');
 		} else {
 			$data['mensagem'] = "Usuario ou senha incorreta";
 			$this->load->view('login', $data);
