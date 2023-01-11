@@ -16,7 +16,7 @@ class Login_model extends CI_Model
             $r = $resultado->row();
 
             $s_usuario = array(
-                's_ipdPessoa' => $r->idPessoa,
+                's_idPessoa' => $r->idPessoa,
                 's_idUsuario' => $r->idUsuario,
                 's_usuario' => $r->nome . "," . $r->sobrenome." " . $r->apelido
             );
