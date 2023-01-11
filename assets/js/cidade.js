@@ -11,7 +11,7 @@ $.post(
 		$.each(obj, function (i, item) {
 			output +=
 				" <li>" +
-				' <div style="' +estilo +'" class="">' +
+				' <div style="' +estilo +'" class="clsCidade">' +
 				'<input type="text" style="width="50%" value="' +item.cidade +'" class=""clsNomeCidade">' +
 				'<a class="users-list-name" href="#">' + item.cidade + "</a>" +
 				'<span class="users-list-date">' + item.idCidade + "</span>" +
