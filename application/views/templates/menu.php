@@ -48,6 +48,8 @@
                   </ul>
               </li>
               <li>
+			  <!-- <a href="<?php echo base_url();?>cupload"> -->
+
                   <a href="<?= base_url() ?>upload">
                       <i class="fa fa-th"></i> <span>Subir Imagem</span>
                       <small class="label pull-right bg-green">new</small>

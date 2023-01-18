@@ -1,32 +1,31 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
 
-class ppload extends CI_Controller
+class Upload extends CI_Controller
 {
+
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Upload_model');
 		$this->load->helper('download');
 		// if (!$this->session->userdata('s_idUsuario')) {
-		//     redirect('login');
+		// 	redirect('clogin');
 		// }
 	}
 
 	public function index()
 	{
 		$data['error'] = "";
-		$data['errorArquivo'] = "";
+		$data['errorArch'] = "";
 		$data['estado'] = "";
-		$data['arquivo'] = "";
-
+		$data['archivo'] = "";
 		$this->load->view('templates/header');
 		$this->load->view('templates/menu');
-		$this->load->view('teste');
+		$this->load->view('upload', $data);
 		$this->load->view('templates/footer');
 	}
 
-	public function enviar()
+	public function subirImagen()
 	{
 		$config['upload_path'] = './uploads/imagens/';
 		$config['allowed_types'] = 'gif|jpg|png';
@@ -48,16 +47,15 @@ class ppload extends CI_Controller
 
 			$this->crearMiniatura($file_info['file_name']);
 
-			$titulo = $this->input->post('titeImagem');
+			$titulo = $this->input->post('titImagen');
 			$imagen = $file_info['file_name'];
 
 			$subir = $this->Upload_model->subir($titulo, $imagen);
 			$data['titulo'] = $titulo;
 			$data['imagen'] = $imagen;
-
 			$this->load->view('templates/header');
 			$this->load->view('templates/menu');
-			$this->load->view('upload', $data);
+			$this->load->view('imagemSubida', $data);
 			$this->load->view('templates/footer');
 		}
 	}
@@ -76,7 +74,7 @@ class ppload extends CI_Controller
 		$this->image_lib->resize();
 	}
 
-	public function fazerUpload()
+	public function subirArchivo()
 	{
 		$config['upload_path'] = './uploads/arquivos/';
 		$config['allowed_types'] = 'pdf|xlsx|docx';
@@ -84,8 +82,8 @@ class ppload extends CI_Controller
 
 		$this->load->library('upload', $config);
 
-		if (!$this->upload->do_upload("fileImagem")) {
-			$data['errorArquivo'] = $this->upload->display_errors();
+		if (!$this->upload->do_upload("fileImagen")) {
+			$data['errorArch'] = $this->upload->display_errors();
 			$this->load->view('templates/header');
 			$this->load->view('templates/menu');
 			$this->load->view('upload', $data);
@@ -94,13 +92,13 @@ class ppload extends CI_Controller
 
 			$file_info = $this->upload->data();
 
-			$titulo = $this->input->post('titeImagem');
-			$arquivo = $file_info['file_name'];
-			$subir = $this->Upload_model->subir($titulo, $arquivo);
-			$data['estado'] = "Arquivo subido.";
-			$data['arquivo'] = $arquivo;
+			$titulo = $this->input->post('titImagen');
+			$archivo = $file_info['file_name'];
+			$subir = $this->mupload->subir($titulo, $archivo);
+			$data['estado'] = "Archivo subido.";
+			$data['archivo'] = $archivo;
 			$data['error'] = "";
-			$data['errorArquivo'] = "";
+			$data['errorArch'] = "";
 
 			$this->load->view('templates/header');
 			$this->load->view('templates/menu');
@@ -109,9 +107,10 @@ class ppload extends CI_Controller
 		}
 	}
 
-	public function downloads($nome)
+	public function downloads($name)
 	{
-		$data = file_get_contents('./uploads/arquivos/' . $nome);
-		force_download($nome, $data);
+
+		$data = file_get_contents('./uploads/arquivos/' . $name);
+		force_download($name, $data);
 	}
 }

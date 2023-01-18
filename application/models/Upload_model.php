@@ -1,6 +1,6 @@
 <?php
 
-class Pessoa_model extends CI_Model
+class Upload_model extends CI_Model
 {
 
     public function construct() {
@@ -8,11 +8,11 @@ class Pessoa_model extends CI_Model
     }
 
     //FUNCIÓN PARA INSERTAR LOS DATOS DE LA IMAGEN SUBIDA
-    function subir($titulo,$imagem)
+    function subir($titulo,$imagen)
     {
         $data = array(
             'titulo' => $titulo,
-            'caminho' => $imagem
+            'caminho' => $imagen
         );
         return $this->db->insert('imagens', $data);
     }
