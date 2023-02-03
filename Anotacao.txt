@@ -12,7 +12,7 @@ https://codeigniter.com/userguide3/general/urls.html
 
 Resoluça odo problema Metodo Encrypt https://stackoverflow.com/questions/40571694/call-to-undefined-method-ci-encryptsha1
 
-
+Link do Tutorial:  https://youtube.com/playlist?list=PLyTNUMBFQyBBIWMbURtecqNQbkFYXvXnd
 
 Template Baixado nessa Versao https://github.com/ColorlibHQ/AdminLTE/releases/tag/v2.3.3
 
